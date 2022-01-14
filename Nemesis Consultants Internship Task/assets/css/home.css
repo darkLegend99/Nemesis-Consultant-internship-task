@@ -1,0 +1,86 @@
+#home_div {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#logo img {
+width: 6rem;
+
+}
+
+#logo h1 {
+color: rgb(0,101,179);
+margin-top: 1rem;
+}
+
+h3{
+    margin-top: 3rem;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #user_form_div {
+    margin-top: 1rem;
+  }
+
+  .main_div {
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.main_div button {
+    margin-top: 0.5rem;
+}

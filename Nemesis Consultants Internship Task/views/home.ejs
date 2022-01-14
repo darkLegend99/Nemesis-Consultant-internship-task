@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="/css/home.css">
+<script src="/js/home.js"></script>
+<script src="/js/userdata.js"></script>
+
+<% if (locals.user) { %>
+  <div id="user_form_div">
+    <div class="main_div">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Enter Details</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Data</button>
+      </div>
+
+      <div id="London" class="tabcontent">
+        <div id="userForm">
+          <form action="/users/createUserDetail" method="POST">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" pattern="^[a-zA-Z\-]+$" placeholder="Enter username"
+                name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobile" aria-describedby="emailHelp" name="mobile"
+                placeholder="Enter number" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+                placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea class="form-control" id="address" rows="2" name="address" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="Paris" class="tabcontent">
+    <div class="main_div">
+      <div id="user_info">
+        <span>Username: </span>
+        <span>
+          <%= userdetail.username %>
+        </span><br>
+        <span>Mobile Number: </span>
+        <span>
+          <%= userdetail.mobile %>
+        </span><br>
+        <span>Email: </span>
+        <span>
+          <%= userdetail.email %>
+        </span><br>
+        <span>Address: </span>
+        <span>
+          <%= userdetail.address %>
+        </span><br>
+        <div>
+          <button id="userdatabtn" class="btn btn-danger" onclick="hide(event,'DeleteData')"
+            href="/users/destroyUserDetails/<%= userdetail._id %>">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <% }else{ %>
+    <div id="home_div">
+      <div id="logo">
+        <img src="/images/logo.png">
+        <h1>Nemesis</h1>
+      </div>
+      <h3>This is the Home page before signing in.</h3>
+      <p>You can sign-in or sign-up from navbar</p>
+    </div>
+    <% } %>
