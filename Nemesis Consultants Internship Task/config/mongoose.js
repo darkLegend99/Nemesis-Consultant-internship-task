@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 const env = require('./environment');
 
-mongoose.connect(`mongodb://localhost/${env.db}`);
+const DB= 'mongodb+srv://admin:nemesisinternship@cluster0.d7mqw.mongodb.net/nemesis?retryWrites=true&w=majority'
+
+// mongoose.connect(`mongodb://localhost/${env.db}`);
+mongoose.connect(DB).then(()=> {
+    console.log('cconnection successful')
+}).catch((err) => console.log('no connection'));
 
 const db = mongoose.connection;
 

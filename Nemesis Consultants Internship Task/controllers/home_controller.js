@@ -1,6 +1,8 @@
 
 const User = require('../models/user');
+const UserDetail = require('../models/user_details');
 
+const userdetail = UserDetail.find({});
 
 // module.exports.home = async function(req, res){
    
@@ -34,5 +36,6 @@ const User = require('../models/user');
 module.exports.home = function(req, res){
     return res.render('home', {
             title: "Home",
+            userdetail: userdetail
          });
 }
